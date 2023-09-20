@@ -28,9 +28,9 @@ class AbstractCubaPotSpk(torch.nn.Module):
 def _doc_from_base(base_doc):
     """ """
     return base_doc.__doc__.replace(
-        'Abstract', 'CUBA LIF'
+        'Abstract', 'CUBA LIF Potential Spike'
     ).replace(
-        'neuron parameter', 'CUBA LIF neuron parameter'
+        'neuron parameter', 'CUBA LIF Potential Spike neuron parameter'
     ).replace(
         'This should never be instantiated on its own.',
         'The block is 8 bit quantization ready.'
