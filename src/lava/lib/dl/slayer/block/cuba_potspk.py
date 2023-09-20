@@ -7,7 +7,7 @@ import numpy as np
 import torch
 
 from . import base
-from ..neuron import cuba
+from ..neuron import cuba_potspk
 from ..synapse import layer as synapse
 from ..axon import Delay
 
@@ -19,7 +19,7 @@ class AbstractCubaPotSpk(torch.nn.Module):
     def __init__(self, *args, **kwargs):
         super(AbstractCubaPotSpk, self).__init__(*args, **kwargs)
         if self.neuron_params is not None:
-            self.neuron = cuba.Neuron(**self.neuron_params)
+            self.neuron = cuba_potspk.Neuron(**self.neuron_params)
         delay = kwargs['delay'] if 'delay' in kwargs.keys() else False
         self.delay = Delay(max_delay=62) if delay is True else None
         del self.neuron_params
